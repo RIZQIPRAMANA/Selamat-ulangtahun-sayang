@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            overflow: hidden;
+        }
+        h1 {
+            color: #9b59b6; /* Ungu pastel */
+        }
+        .slide {
+            display: none;
+            padding: 50px;
+        }
+        .active {
+            display: block;
+        }
+        .photo img {
+            width: 300px; /* Sesuaikan ukuran gambar */
+            height: auto;
+            border-radius: 10px;
+        }
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #9b59b6;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Selamat Ulang Tahun, Ettaa!</h1>
+
+    <div class="slide active">
+        <p>Amazing birthday wishes to you, my honeeyy!!</p>
+        <p>Aku harap Ettaa jauhh lebih baik dan jauh lebih kuat dari kemarin.</p>
+    </div>
+
+    <div class="slide">
+        <div class="photo">
+            <img src="UltahEttaa.jpg" alt="Selamat Ulang Tahun">
+        </div>
+    </div>
+
+    <div class="slide">
+        <p>Ettaa orangnya always happy always smile. Semoga kamuu happy terus yaah.</p>
+        <p>Cinta bukan hanya tentang kata-kata "I Love You So Much", tapi juga tentang perasaan yang saling nyambung tanpa perlu banyak kata.</p>
+        <p>Cuek itu mungkin gaya ettaa, tapi cintanya itu loh, bikin ettaa selalu punya vibes yang positif.</p>
+    </div>
+
+    <button class="button" onclick="nextSlide()">Selanjutnya</button>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+    </script>
+
+</body>
+</html>
